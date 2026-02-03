@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import lilpook from './assets/images/lilpook.png'
 import './App.css'
 
 function App() {
@@ -6,10 +7,10 @@ function App() {
   const [showValentine, setShowValentine] = useState(false)
 
   const messages = [
-    "Will you be my Valentine? 💕",
-    "Are you sure? Think again! 😢",
-    "Please reconsider... 🥺",
-    "Last chance! Pretty please? 🙏"
+    "WILL YOU BE MY VALENTINE? 💕",
+    "WHAT DO YOU MEAN, NO....?!",
+    "You don't wanna be my valentine?! But... 🥺",
+    "Last chance!!!! Pretty please? 🙏"
   ]
 
   const handleNoClick = () => {
@@ -27,7 +28,7 @@ function App() {
       <div className="min-h-screen bg-pink-100 flex items-center justify-center p-8">
         <div className="text-center">
           <h1 className="text-6xl mb-8 text-pink-600 animate-bounce">
-            🎉 Yay! 🎉
+            🎉 Yay!! Happy Valentine's Day, Bobby! 🎉
           </h1>
           <p className="text-2xl text-pink-700 mb-8">
             You said YES! 💖
@@ -44,10 +45,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-red-200 to-pink-300 flex items-center justify-center p-8">
       <div className="text-center max-w-2xl mx-auto">
-        {/* Placeholder for your main valentine image */}
-        <div className="w-80 h-80 mx-auto bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center rounded-lg mb-8">
-          <p className="text-gray-500">Your main valentine PNG here</p>
-        </div>
+        <img src={lilpook} alt="Lil Pook" className="w-32 mx-auto mb-4 object-cover animate-bounce" />
 
         <h1 className="text-4xl md:text-5xl font-bold text-pink-800 mb-8 leading-tight">
           {messages[noClickCount]}
