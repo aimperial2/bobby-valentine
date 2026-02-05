@@ -1,16 +1,22 @@
 import { useState } from 'react'
 import lilpook from './assets/images/lilpook.png'
+import lilpook2 from './assets/images/lilpook2.png'
+import lilpook3 from './assets/images/lilpook3.png'
+import lilpook4 from './assets/images/lilpook4.png'
 import './App.css'
 
 function App() {
   const [noClickCount, setNoClickCount] = useState(0)
   const [showValentine, setShowValentine] = useState(false)
 
+  const lilpookImages = [lilpook, lilpook2, lilpook3, lilpook4]
+
+
   const messages = [
     "WILL YOU BE MY VALENTINE? 💕",
     "WHAT DO YOU MEAN, NO....?!",
     "You don't wanna be my valentine?! But... 🥺",
-    "Last chance!!!! Pretty please? 🙏"
+    "LAST CHANCE!!!! Pretty please? 🙏"
   ]
 
   const handleNoClick = () => {
@@ -27,15 +33,15 @@ function App() {
     return (
       <div className="min-h-screen bg-pink-100 flex items-center justify-center p-8">
         <div className="text-center">
-          <h1 className="text-6xl mb-8 text-pink-600 animate-bounce">
+          <h1 className="text-4xl md:text-6xl mb-8 text-pink-600 animate-bounce">
             🎉 Yay!! Happy Valentine's Day, Bobby! 🎉
           </h1>
           <p className="text-2xl text-pink-700 mb-8">
-            You said YES! 💖
+            I love you! 💖
           </p>
           {/* Placeholder for your PNG image */}
           <div className="w-64 h-64 mx-auto bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center rounded-lg mb-8">
-            <p className="text-gray-500">Your happy valentine PNG here</p>
+
           </div>
         </div>
       </div>
@@ -45,7 +51,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-red-200 to-pink-300 flex items-center justify-center p-8">
       <div className="text-center max-w-2xl mx-auto">
-        <img src={lilpook} alt="Lil Pook" className="w-32 mx-auto mb-4 object-cover animate-bounce" />
+        <img src={lilpookImages[noClickCount]} alt="Lil Pook" className="w-32 mx-auto mb-4 object-cover animate-bounce" />
 
         <h1 className="text-4xl md:text-5xl font-bold text-pink-800 mb-8 leading-tight">
           {messages[noClickCount]}
@@ -57,7 +63,7 @@ function App() {
             onClick={handleYesClick}
             className={`
               bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full
-              transform transition-all duration-300 hover:scale-110 shadow-lg
+              transform transition-all duration-300 hover:scale-110 max-w
               ${noClickCount > 0 ? 'scale-125' : 'scale-100'}
               ${noClickCount > 1 ? 'scale-150' : ''}
               ${noClickCount > 2 ? 'scale-175' : ''}
@@ -67,7 +73,7 @@ function App() {
               padding: `${1 + noClickCount * 0.5}rem ${2 + noClickCount * 0.5}rem`
             }}
           >
-            Yes! 💕
+            Yes!!
           </button>
 
           {/* No Button - gets smaller and moves */}
@@ -91,7 +97,7 @@ function App() {
                 padding: `${0.75 - noClickCount * 0.2}rem ${1.5 - noClickCount * 0.3}rem`
               }}
             >
-              No 😔
+              No...
             </button>
           )}
         </div>
@@ -100,9 +106,9 @@ function App() {
           <div className="mt-8">
             <button
               onClick={handleYesClick}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transform transition-all duration-300 hover:scale-110 shadow-lg animate-pulse"
+              className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transform transition-all duration-300 hover:scale-110 animate-pulse"
             >
-              Okay, fine... Yes! 💕
+             You have no choice-- Say Yes!
             </button>
           </div>
         )}
