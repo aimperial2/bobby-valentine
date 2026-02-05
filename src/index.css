@@ -1,1 +1,11 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Pookie';
+  src: url('./assets/Pookie-Regular.ttf') format('truetype'),
+       url('./assets/Pookie-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'Pookie', sans-serif;
+}
